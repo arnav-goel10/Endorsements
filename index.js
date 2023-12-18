@@ -45,7 +45,7 @@ async function relist() {
             }    
             
         } else {
-            lsendEl.innerHTML = "No items here... yet"
+            lsendEl.innerHTML = "No Endorsements... yet 😅"
         }
         
         
@@ -71,7 +71,7 @@ function addtestimonial(obj) {
         <p>${obj.testimonial}</p>
         </div>
         <div class="fromtest">
-            <p>From ${obj.sender}</p>
+            From ${obj.sender} <div class="likes"> 🩷</div>
     </li>
     ` + lsendEl.innerHTML
     lsendEl.innerHTML = testin.innerHTML

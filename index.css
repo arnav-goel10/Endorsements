@@ -138,10 +138,19 @@ html {
     font-family: Inter;
     font-size: 14px;
     font-weight: 700;
+    margin-bottom: 12px;
 }
 
 .fromtest {
     font-family: Inter;
     font-size: 14px;
     font-weight: 700;
+    margin-top: 8px;
+    margin-bottom: 10px;
 }
+
+.likes {
+    text-align: right;
+    display: inline-block;
+  }
+  
