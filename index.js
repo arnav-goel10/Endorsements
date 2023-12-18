@@ -76,11 +76,15 @@ function addtestimonial(obj) {
     ` + lsendEl.innerHTML
     lsendEl.innerHTML = testin.innerHTML
     const likeEl = document.getElementsByClassName('likes')
+    const individualEl = document.getElementsByClassName('individual')
     for (const el of likeEl) {
-        el.addEventListener("click", addlike())
+        el.addEventListener("click", function() {
+            console.log("clicked")
+        })
     }   
-}
-
-function addlike() {
-    console.log("like")
+    for (const el1 of individualEl) {
+        el1.addEventListener("dblclick", function() {
+            console.log("clicked")
+        })
+    }
 }
