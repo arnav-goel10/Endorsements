@@ -3,9 +3,11 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
-    databaseURL: "https://realtime-database-df319-default-rtdb.europe-west1.firebasedatabase.app/"
+    databaseURL: "https://endorsements-arnav-default-rtdb.asia-southeast1.firebasedatabase.app/"
 }
-
+const app = initializeApp(appSettings)
+const database = getDatabase(app)
+const EndorsementListinDB = ref(database, "EndorsementList")
 const fromEl = document.getElementById('from');
 const toEl = document.getElementById('to');
 const testimonialEl = document.getElementById('testimonial');
@@ -20,21 +22,21 @@ function published() {
         to: toval,
         testimonial: testimonialval
     }
-    clear()
+    clearinput()
     upload(testimonialobj)
     relist()
 }
 
-function clear() {
+function clearinput() {
     fromEl.value = ''
     toEl.value = ''
     testimonialEl.value = ''
 }
 
 function relist() {
-
+    
 }
 
 function upload(obj) {
-
+    push(EndorsementListinDB, obj)
 }
