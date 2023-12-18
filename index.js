@@ -17,12 +17,12 @@ const lsendEl = document.getElementById('lsend');
 relist()
 publishEl.addEventListener("click", async function() {
     console.log(fromEl.value)
-    await upload({
+    upload({
         sender: fromEl.value,
         to: toEl.value,
         testimonial: testimonialEl.value
     })
-    await clearinput()
+    clearinput()
     await relist()
 })
 
@@ -32,9 +32,8 @@ function clearinput() {
     testimonialEl.value = ''
 }
 
-function relist() {
-    console.log('relisting')
-    onValue(EndorsementListinDB, function(snapshot) {      
+async function relist() {
+    await onValue(EndorsementListinDB, function(snapshot) {      
         if (snapshot.exists()) {
             let itemsArray = Object.entries(snapshot.val())
             cleartestimonials()
@@ -46,7 +45,7 @@ function relist() {
             }    
             
         } else {
-            lsend.innerHTML = "No items here... yet"
+            lsendEl.innerHTML = "No items here... yet"
         }
         
         
@@ -63,19 +62,16 @@ function cleartestimonials() {
 
 function addtestimonial(obj) {
     let testin = document.createElement('div')
-    testin.innerHTML += `
+    testin.innerHTML +=`
     <div class="individual">
-        <div class="from">
-            <p>From: ${obj.sender}</p>
-        </div>
-        <div class="to">
-            <p>To: ${obj.to}</p>
-        </div>
-        <div class="testimonial">
-            <p>Testimonial: ${obj.testimonial}</p>
-        </div>
+        <div class="totest">
+        <p>To: ${obj.to}</p>
+        <div class="testtest">
+        <p>Testimonial: ${obj.testimonial}</p>
+    </div>
+    </div>
     </div>
     
-    `
-    lsendEl.appendChild(testin)
+    ` + lsendEl.innerHTML
+    lsendEl.innerHTML = testin.innerHTML
 }
