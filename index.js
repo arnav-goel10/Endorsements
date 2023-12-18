@@ -64,7 +64,7 @@ function cleartestimonials() {
 function addtestimonial(obj) {
     let testin = document.createElement('div')
     testin.innerHTML +=`
-    <li class="individual">
+    <li class="individual" dblclick="addlike()">
         <div class="totest">
             <p>To ${obj.to}</p>
         </div>
@@ -72,8 +72,22 @@ function addtestimonial(obj) {
         <p>${obj.testimonial}</p>
         </div>
         <div class="fromtest">
-            From ${obj.sender} <div class="likes" onclick="console.log(11111)">${obj.likecount==undefined?0:obj.likecount} 🩷</div>
+            From ${obj.sender} <div class="likes">${obj.likecount==undefined?0:obj.likecount} 🩷</div>
     </li>
     ` + lsendEl.innerHTML
     lsendEl.innerHTML = testin.innerHTML
+}
+
+const likeEl = document.getElementsByClassName('likes')
+likeEl.addEventListener("click", function () {
+    addlike()
+})
+
+const individualEl = document.getElementsByClassName('individual')
+individualEl.addEventListener("dblclick", function () {
+    addlike()
+})
+
+function addlike() {
+    console.log("like")
 }
