@@ -63,15 +63,16 @@ function cleartestimonials() {
 function addtestimonial(obj) {
     let testin = document.createElement('div')
     testin.innerHTML +=`
-    <div class="individual">
+    <li class="individual">
         <div class="totest">
-        <p>To: ${obj.to}</p>
+            <p>To ${obj.to}</p>
+        </div>
         <div class="testtest">
-        <p>Testimonial: ${obj.testimonial}</p>
-    </div>
-    </div>
-    </div>
-    
+        <p>${obj.testimonial}</p>
+        </div>
+        <div class="fromtest">
+            <p>From ${obj.sender}</p>
+    </li>
     ` + lsendEl.innerHTML
     lsendEl.innerHTML = testin.innerHTML
 }

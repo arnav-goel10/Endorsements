@@ -109,40 +109,39 @@ html {
 #lsend {
     display: flex;
     flex-direction: column;
-    gap: 13px;
-}
-
-.listoftestimonials {
-    background-color: #FFF;
-    width: 317px;
-    height: 129px;
     flex-shrink: 0;
+    width: 317px;
+    gap: 13px;
+    margin: auto;
+    padding: 10px;
 }
 
-.listoftestimonials:hover {
-    background-color: #bcbbc7;
-    cursor: pointer;
-}
 
 .individual {
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
-    background-color: white;
-    color: black;
-    font-family: Inter;
-    font-size: 14px;
-}
-
-.totest {
     color: #1B1924;
+    background-color: white;
     font-family: Inter;
     font-size: 14px;
-    font-weight: 700;
-    margin-right: auto;
+    list-style: none;    
+    padding-left: 14px;
+    padding-right: 17px;
+    border-radius: 4px;
+    word-wrap: break-word;
 }
 
 .individual:hover {
-    background-color: #c5c4d4;
+    background: #c5c4d4;
     cursor: pointer;
+}
+
+.totest {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.fromtest {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 700;
 }
