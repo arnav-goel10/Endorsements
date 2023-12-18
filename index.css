@@ -129,6 +129,10 @@ html {
     word-wrap: break-word;
 }
 
+.individual:hover .likes {
+    background: #c5c4d4;
+}
+
 .individual:hover {
     background: #c5c4d4;
     cursor: pointer;
@@ -162,4 +166,7 @@ html {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    border: none;
+    outline: none;
+    background-color: white;
   }
