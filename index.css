@@ -91,6 +91,12 @@ html {
     background: #28A9F1;
     margin-top: 9px;
     border: none;
+    margin-bottom: 5px;
+}
+
+#pub:hover {
+    background-color: #28209a;
+    cursor: pointer;
 }
 
 #en {

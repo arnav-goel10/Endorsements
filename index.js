@@ -36,6 +36,5 @@ function relist() {
 }
 
 function upload(obj) {
-    console.log(obj)
     push(EndorsementListinDB, JSON.stringify(obj))
 }
