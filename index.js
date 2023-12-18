@@ -20,7 +20,8 @@ publishEl.addEventListener("click", async function() {
     upload({
         sender: fromEl.value,
         to: toEl.value,
-        testimonial: testimonialEl.value
+        testimonial: testimonialEl.value,
+        likecount: 0
     })
     clearinput()
     await relist()
