@@ -37,14 +37,12 @@ function relist() {
     onValue(EndorsementListinDB, function(snapshot) {      
         if (snapshot.exists()) {
             let itemsArray = Object.entries(snapshot.val())
-            console.log(itemsArray)
             cleartestimonials()
             for (let i = 0; i < itemsArray.length; i++) {
                 let currentItem = itemsArray[i]
                 let currentItemID = currentItem[0]
                 let currentItemValue = currentItem[1]
-                
-                addtestimonial(JSON.parse(currentItem))
+                addtestimonial(JSON.parse(currentItemValue))
             }    
             
         } else {
