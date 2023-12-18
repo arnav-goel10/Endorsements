@@ -1,7 +1,15 @@
 // javascript
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+
+const appSettings = {
+    databaseURL: "https://realtime-database-df319-default-rtdb.europe-west1.firebasedatabase.app/"
+}
+
 const fromEl = document.getElementById('from');
 const toEl = document.getElementById('to');
 const testimonialEl = document.getElementById('testimonial');
+const publishEl = document.getElementById('lsend');
 
 function published() {
     const fromval = fromEl.value
@@ -13,6 +21,8 @@ function published() {
         testimonial: testimonialval
     }
     clear()
+    upload(testimonialobj)
+    relist()
 }
 
 function clear() {
@@ -21,3 +31,10 @@ function clear() {
     testimonialEl.value = ''
 }
 
+function relist() {
+
+}
+
+function upload(obj) {
+
+}
