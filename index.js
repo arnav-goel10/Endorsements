@@ -71,7 +71,7 @@ function addtestimonial(obj) {
         <p>${obj.testimonial}</p>
         </div>
         <div class="fromtest">
-            From ${obj.sender} <div class="likes"> 🩷</div>
+            From ${obj.sender} <div class="likes" onclick="console.log(11111)">${obj.likecount==undefined?0:obj.likecount} 🩷</div>
     </li>
     ` + lsendEl.innerHTML
     lsendEl.innerHTML = testin.innerHTML

@@ -147,10 +147,19 @@ html {
     font-weight: 700;
     margin-top: 8px;
     margin-bottom: 10px;
-}
-
-.likes {
-    text-align: right;
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
   }
   
+
+  .likes {
+    text-align: right;
+    margin-right: 12px; /* adjust margin value as needed */
+    float: right;
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
