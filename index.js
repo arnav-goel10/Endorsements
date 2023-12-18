@@ -64,31 +64,18 @@ function cleartestimonials() {
 function addtestimonial(obj) {
     let testin = document.createElement('div')
     testin.innerHTML += `
-        <div class="testimonial-header">
-            <div class="testimonial-header-left">
-                <div class="testimonial-header-left-from">
-                    <span class="testimonial-header-left-from-text">${obj.sender}</span>
-                </div>
-                <div class="testimonial-header-left-to">
-                    <span class="testimonial-header-left-to-text">to</span>
-                </div>
-                <div class="testimonial-header-left-to">
-                    <span class="testimonial-header-left-to-text">${obj.to}</span>
-                </div>
-            </div>
-            <div class="testimonial-header-right">
-                <div class="testimonial-header-right-delete">
-                    <button class="testimonial-header-right-delete-button" onclick="deletetestimonial('${obj.id}')">
-                        <span class="testimonial-header-right-delete-button-text">Delete</span>
-                    </button>
-                </div>
-            </div>
+    <div class="individual">
+        <div class="from">
+            <p>From: ${obj.sender}</p>
         </div>
-        <div class="testimonial-body">
-            <div class="testimonial-body-text">
-                <span class="testimonial-body-text-text">${obj.testimonial}</span>
-            </div>
+        <div class="to">
+            <p>To: ${obj.to}</p>
         </div>
+        <div class="testimonial">
+            <p>Testimonial: ${obj.testimonial}</p>
+        </div>
+    </div>
+    
     `
     lsendEl.appendChild(testin)
 }

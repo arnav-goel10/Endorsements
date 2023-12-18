@@ -121,3 +121,19 @@ html {
     height: 129px;
     flex-shrink: 0;
 }
+
+.listoftestimonials:hover {
+    background-color: #bcbbc7;
+    cursor: pointer;
+}
+
+.listoftestimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    font-family: Inter;
+    font-size: 14px;
+}
