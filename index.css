@@ -102,3 +102,16 @@ html {
     margin-top: 19px;
     margin-bottom: 15px;
 }
+
+#lsend {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.listoftestimonials {
+    background-color: #FFF;
+    width: 317px;
+    height: 129px;
+    flex-shrink: 0;
+}

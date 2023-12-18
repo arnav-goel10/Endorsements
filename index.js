@@ -5,27 +5,25 @@ import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com
 const appSettings = {
     databaseURL: "https://endorsements-arnav-default-rtdb.asia-southeast1.firebasedatabase.app/"
 }
+
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
 const EndorsementListinDB = ref(database, "EndorsementList")
 const fromEl = document.getElementById('from');
 const toEl = document.getElementById('to');
 const testimonialEl = document.getElementById('testimonial');
-const publishEl = document.getElementById('lsend');
-
-function published() {
-    const fromval = fromEl.value
-    const toval = toEl.value
-    const testimonialval = testimonialEl.value
-    const testimonialobj = {
-        from: fromval,
-        to: toval,
-        testimonial: testimonialval
-    }
-    clearinput()
-    upload(testimonialobj)
-    relist()
-}
+const publishEl = document.getElementById('pub');
+const lsendEl = document.getElementById('lsend');
+publishEl.addEventListener("click", async function() {
+    console.log(fromEl.value)
+    await upload({
+        sender: fromEl.value,
+        to: toEl.value,
+        testimonial: testimonialEl.value
+    })
+    await clearinput()
+    await relist()
+})
 
 function clearinput() {
     fromEl.value = ''
@@ -34,9 +32,10 @@ function clearinput() {
 }
 
 function relist() {
-    
+    console.log('relisting')
 }
 
 function upload(obj) {
-    push(EndorsementListinDB, obj)
+    console.log(obj)
+    push(EndorsementListinDB, JSON.stringify(obj))
 }
