@@ -1,11 +1,31 @@
 <!doctype html>
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <title>We are the Champions</title>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <h1>We are the Champions</h1>
-        <script src="index.js"></script>
-    </body>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Josefin+Sans:wght@700&display=swap">
+  <title>We are the Champions</title>  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <img src="./assets/freddie.png" class="logo" alt="Freddie Mercury"> 
+    </header>
+    <h1 id="pnc">We are the Champions</h1>
+    <main class="content">
+      <div class="testimonial">
+        <textarea id="testimonial" placeholder="Write your endorsement here"></textarea>
+        <div class="author">
+          <input id="from" type="text" placeholder="From">
+          <input id="to" type="text" placeholder="To">  
+        </div>
+      </div>
+      <button id="pub">Publish</button>
+      <div id="en">- Endorsements - </div>
+    </main>
+  </div>
+  <script src="index.js"></script>
+</body>
 </html>

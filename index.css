@@ -1,4 +1,104 @@
-html, body {
-    margin: 0;
-    padding: 0;
+/* Reset styles */
+html {
+    font-family: Inter;
+    user-select: none;
+  }
+  
+  body {
+    margin: auto;
+    background: #1B1924; 
+    color: #8F8F8F;
+  }
+  
+  /* Layout */
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  .logo {
+    width: 90px;
+    margin-top:51px;
+    height: 90px;  
+    margin-bottom: 17px;
+  }
+  
+  /* Typography */
+
+  #pnc {
+    color: #FFF;
+    font-family: Josefin Sans;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 19px;
+    text-align: center; 
+  }
+ 
+  /* Testimonial */
+  #testimonial {
+    width: 282px;
+    height: 93px;
+    padding: 12px 13px 19px 16px;
+    border-radius: 8px;
+    background: #444059; 
+    color: inherit;
+    border: none;
+    outline: none; 
+    resize: none;
+  }
+  
+  #from, 
+  #to {
+    width: 137.361px;
+    height: 27px; 
+    padding: 6.5px 7.5px;
+    border-radius: 8px;
+    background: #444059;
+    border: none;
+    outline: none;  
+    text-align: center;
+    color: #8F8F8F;
+  }
+
+  #from {
+    margin-right:auto;
+  }
+  
+  .author {
+    display: flex;
+    margin-top: 4.5px;
+  }
+
+#pub {
+    width: 317px;
+    height: 61px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #28A9F1;
+    margin-top: 9px;
+    border: none;
+}
+
+#en {
+    color: #FFF;
+    font-weight: 700;
+    font-family: Josefin Sans;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 19px;
+    margin-bottom: 15px;
 }
