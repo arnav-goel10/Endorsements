@@ -1,6 +1,6 @@
 // javascript
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue, get,child } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
     databaseURL: "https://endorsements-arnav-default-rtdb.asia-southeast1.firebasedatabase.app/"
@@ -84,9 +84,9 @@ function addtestimonial(obj,key) {
     newEl.appendChild(newFrom);
     lsendEl.append(newEl)
     newLike.addEventListener("click", function() {
-        console.log(key)
+        console.log(12)
     })  
     newEl.addEventListener("dblclick", function() {
-        console.log(key)     
+        console.log(11)
     })
 }
