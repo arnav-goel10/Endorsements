@@ -41,7 +41,7 @@ async function relist() {
                 let currentItem = itemsArray[i]
                 let currentItemID = currentItem[0]
                 let currentItemValue = currentItem[1]
-                addtestimonial(JSON.parse(currentItemValue))
+                addtestimonial(JSON.parse(currentItemValue),currentItemID)
             }    
             
         } else {
@@ -60,8 +60,10 @@ function cleartestimonials() {
     lsendEl.innerHTML = ''
 }
 
-function addtestimonial(obj) {
+function addtestimonial(obj,key) {
     let testin = document.createElement('div')
+    const likeEl = document.getElementsByClassName('likes')
+    const individualEl = document.getElementsByClassName('individual')
     testin.innerHTML +=`
     <li class="individual">
         <div class="totest">
@@ -75,8 +77,7 @@ function addtestimonial(obj) {
     </li>
     ` + lsendEl.innerHTML
     lsendEl.innerHTML = testin.innerHTML
-    const likeEl = document.getElementsByClassName('likes')
-    const individualEl = document.getElementsByClassName('individual')
+    
     for (const el of likeEl) {
         el.addEventListener("click", function() {
             console.log("clicked")
@@ -85,6 +86,7 @@ function addtestimonial(obj) {
     for (const el1 of individualEl) {
         el1.addEventListener("dblclick", function() {
             console.log("clicked")
+            
         })
     }
 }
