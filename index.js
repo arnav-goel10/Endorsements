@@ -84,20 +84,19 @@ function addtestimonial(obj,key) {
     newEl.appendChild(newFrom);
     lsendEl.prepend(newEl)
     const currentCount = newLike.textContent.split(" ")[0];
-    const updatedCount = parseInt(currentCount) + 1;
     newLike.addEventListener("click", function() {
-        startlike(updatedCount,key,obj)         
+        startlike(currentCount,key,obj)         
     })  
     newEl.addEventListener("dblclick", function() {
-        startlike(updatedCount,key,obj)
+        startlike(currentCount,key,obj)
       });
       
 }
 
-function updateLikeCount(key, updatedCount,obj) {
+function updateLikeCount(key, currentCount,obj) {
     const newObj = {
         ...obj,
-        likecount: updatedCount
+        likecount: Number(currentCount) + 1
     };
     set(ref(database, `EndorsementList/${key}`), JSON.stringify(newObj));
 }
