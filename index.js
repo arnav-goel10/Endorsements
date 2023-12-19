@@ -94,12 +94,8 @@ function addtestimonial(obj, key) {
     newLike.classList.remove("liked");
   }
 
-  newLike.addEventListener("click", function() {
-    startlike(currentCount, key, obj);
-  });
-
-  newEl.addEventListener("dblclick", function() {
-    startlike(currentCount, key, obj);
+  newLike.addEventListener("click", async function() {
+    await startlike(currentCount, key, obj);
   });
 }
 
