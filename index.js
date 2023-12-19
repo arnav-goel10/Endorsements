@@ -83,16 +83,10 @@ function addtestimonial(obj,key) {
     newEl.appendChild(newTest);
     newEl.appendChild(newFrom);
     lsendEl.append(newEl)
-    
-    for (const el of likeEl) {
-        el.addEventListener("click", function() {
-            console.log("clicked")
-        })
-    }   
-    for (const el1 of individualEl) {
-        el1.addEventListener("dblclick", function() {
-            console.log("clicked")
-            
-        })
-    }
+    newLike.addEventListener("click", function() {
+        console.log("clicked")
+    })  
+    newEl.addEventListener("dblclick", function() {
+        console.log("clicked")     
+    })
 }
