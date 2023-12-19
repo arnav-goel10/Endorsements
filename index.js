@@ -9,11 +9,11 @@ const appSettings = {
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
 const EndorsementListinDB = ref(database, "EndorsementList")
-const fromEl = document.getElementById('from');
-const toEl = document.getElementById('to');
-const testimonialEl = document.getElementById('testimonial');
-const publishEl = document.getElementById('pub');
-const lsendEl = document.getElementById('lsend');
+const fromEl = document.getElementById('from')
+const toEl = document.getElementById('to')
+const testimonialEl = document.getElementById('testimonial')
+const publishEl = document.getElementById('pub')
+const lsendEl = document.getElementById('lsend')
 relist()
 publishEl.addEventListener("click", async function() {
     upload({
@@ -77,30 +77,30 @@ function addtestimonial(obj,key) {
     newTo.innerHTML = `<p>To ${obj.to}</p>`
     newTest.innerHTML = `<p>${obj.testimonial}</p>`
     newLike.textContent = `${obj.likecount==undefined?0:obj.likecount} 🩷`
-    newFrom.innerHTML = `From ${obj.sender}`;
-    newFrom.appendChild(newLike);
-    newEl.appendChild(newTo);
-    newEl.appendChild(newTest);
-    newEl.appendChild(newFrom);
+    newFrom.innerHTML = `From ${obj.sender}`
+    newFrom.appendChild(newLike)
+    newEl.appendChild(newTo)
+    newEl.appendChild(newTest)
+    newEl.appendChild(newFrom)
     lsendEl.prepend(newEl)
-    const currentCount = newLike.textContent.split(" ")[0];
+    const currentCount = Number(newLike.textContent.split(" ")[0])
     newLike.addEventListener("click", function() {
         startlike(currentCount,key,obj)         
     })  
     newEl.addEventListener("dblclick", function() {
         startlike(currentCount,key,obj)
       });
-      
+    
 }
 
 function updateLikeCount(key, currentCount,obj) {
     const newObj = {
         ...obj,
-        likecount: Number(currentCount) + 1
+        likecount: currentCount + 1
     };
     set(ref(database, `EndorsementList/${key}`), JSON.stringify(newObj));
 }
 
 function startlike(xyz,key1,obj1) {
-    updateLikeCount(key1, xyz,obj1);
+    updateLikeCount(key1, xyz,obj1)
 }
