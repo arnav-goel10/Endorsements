@@ -84,9 +84,9 @@ function addtestimonial(obj,key) {
     newEl.appendChild(newFrom);
     lsendEl.append(newEl)
     newLike.addEventListener("click", function() {
-        console.log("clicked")
+        console.log(key)
     })  
     newEl.addEventListener("dblclick", function() {
-        console.log("clicked")     
+        console.log(key)     
     })
 }
