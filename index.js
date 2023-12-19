@@ -134,8 +134,8 @@ function isLiked(key) {
     localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
   }
   
-  function removeFromLikedPosts(key) {
+function removeFromLikedPosts(key) {
     const likedPosts = JSON.parse(localStorage.getItem("likedPosts") || "{}");
     delete likedPosts[key];
     localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
-    }
+}
