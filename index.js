@@ -103,4 +103,4 @@ function updateLikeCount(key, currentCount,obj) {
 
 function startlike(xyz,key1,obj1) {
     updateLikeCount(key1, xyz,obj1);
-}  
+}
