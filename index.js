@@ -61,9 +61,6 @@ function cleartestimonials() {
 }
 
 function addtestimonial(obj, key) {
-  let testin = document.createElement('div');
-  const likeEl = document.getElementsByClassName('likes');
-  const individualEl = document.getElementsByClassName('individual');
   const newEl = document.createElement("li");
   const newTo = document.createElement("div");
   const newFrom = document.createElement("div");
@@ -95,7 +92,7 @@ function addtestimonial(obj, key) {
   }
 
   newLike.addEventListener("click", async function() {
-    await startlike(currentCount, key, obj);
+    startlike(currentCount, key, obj);
   });
 }
 
