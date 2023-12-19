@@ -64,19 +64,25 @@ function addtestimonial(obj,key) {
     let testin = document.createElement('div')
     const likeEl = document.getElementsByClassName('likes')
     const individualEl = document.getElementsByClassName('individual')
-    testin.innerHTML +=`
-    <li class="individual">
-        <div class="totest">
-            <p>To ${obj.to}</p>
-        </div>
-        <div class="testtest">
-        <p>${obj.testimonial}</p>
-        </div>
-        <div class="fromtest">
-            From ${obj.sender} <button class="likes">${obj.likecount==undefined?0:obj.likecount} 🩷</button>
-    </li>
-    ` + lsendEl.innerHTML
-    lsendEl.innerHTML = testin.innerHTML
+    const  newEl = document.createElement("li")
+    const newTo = document.createElement("div")
+    const newFrom = document.createElement("div")
+    const newTest = document.createElement("div")
+    const newLike = document.createElement("button")
+    newEl.className = "individual"
+    newTo.className = "totest"
+    newFrom.className = "fromtest"
+    newTest.className = "testtest"
+    newLike.className = "likes"
+    newTo.innerHTML = `<p>To ${obj.to}</p>`
+    newTest.innerHTML = `<p>${obj.testimonial}</p>`
+    newLike.textContent = `${obj.likecount==undefined?0:obj.likecount} 🩷`
+    newFrom.innerHTML = `From ${obj.sender}`;
+    newFrom.appendChild(newLike);
+    newEl.appendChild(newTo);
+    newEl.appendChild(newTest);
+    newEl.appendChild(newFrom);
+    lsendEl.append(newEl)
     
     for (const el of likeEl) {
         el.addEventListener("click", function() {
