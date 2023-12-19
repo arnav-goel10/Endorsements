@@ -1,6 +1,6 @@
 // javascript
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push, onValue, get,child } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue, set } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
     databaseURL: "https://endorsements-arnav-default-rtdb.asia-southeast1.firebasedatabase.app/"
@@ -82,11 +82,26 @@ function addtestimonial(obj,key) {
     newEl.appendChild(newTo);
     newEl.appendChild(newTest);
     newEl.appendChild(newFrom);
-    lsendEl.append(newEl)
+    lsendEl.prepend(newEl)
+    const currentCount = newLike.textContent.split(" ")[0];
+    const updatedCount = parseInt(currentCount) + 1;
     newLike.addEventListener("click", function() {
-        console.log(12)
+        startlike(updatedCount,key,obj)         
     })  
     newEl.addEventListener("dblclick", function() {
-        console.log(11)
-    })
+        startlike(updatedCount,key,obj)
+      });
+      
 }
+
+function updateLikeCount(key, updatedCount,obj) {
+    const newObj = {
+        ...obj,
+        likecount: updatedCount
+    };
+    set(ref(database, `EndorsementList/${key}`), JSON.stringify(newObj));
+}
+
+function startlike(xyz,key1,obj1) {
+    updateLikeCount(key1, xyz,obj1);
+}  
